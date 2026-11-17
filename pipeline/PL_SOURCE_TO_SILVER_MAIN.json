@@ -61,7 +61,7 @@
 							"typeProperties": {
 								"variableName": "testvar",
 								"value": {
-									"value": "@item()",
+									"value": "@string(item())",
 									"type": "Expression"
 								}
 							}
@@ -85,7 +85,7 @@
 							"typeProperties": {
 								"variableName": "testvar2",
 								"value": {
-									"value": "@item().table_id",
+									"value": "@string(item().table_id)",
 									"type": "Expression"
 								}
 							}
