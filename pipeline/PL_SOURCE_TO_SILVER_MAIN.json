@@ -98,8 +98,6 @@
 						{
 							"name": "ingest from source to silver inner",
 							"type": "ExecutePipeline",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Failed",
 							"dependsOn": [
 								{
 									"activity": "Insert Inprogress",
@@ -162,8 +160,6 @@
 						{
 							"name": "Insert Inprogress_copy1",
 							"type": "Script",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "ingest from source to silver inner",
