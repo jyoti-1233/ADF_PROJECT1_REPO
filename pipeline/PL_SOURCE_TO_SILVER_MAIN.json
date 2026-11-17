@@ -127,7 +127,14 @@
 						{
 							"name": "Insert Inprogress_copy1",
 							"type": "Script",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Insert Inprogress",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 2,
