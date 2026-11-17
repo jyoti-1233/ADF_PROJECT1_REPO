@@ -131,7 +131,7 @@
 								{
 									"activity": "Execute Pipeline1",
 									"dependencyConditions": [
-										"Succeeded"
+										"Failed"
 									]
 								}
 							],
