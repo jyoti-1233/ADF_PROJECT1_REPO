@@ -34,8 +34,6 @@
 			{
 				"name": "injgest all table",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "read_souce_table_list",
@@ -129,6 +127,8 @@
 						{
 							"name": "Insert Inprogress_copy1",
 							"type": "Script",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Insert Inprogress",
@@ -163,6 +163,35 @@
 							}
 						}
 					]
+				}
+			},
+			{
+				"name": "Insert Inprogress_copy1_copy1",
+				"type": "Script",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 2,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "ls_AzureSqlDatabaseproj1",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": {
+								"value": "update  [ctrl].[audit_log] \nset status = 'FAILED', \nend_time = sysutcdatetime() \nWHERE adf_run_id = @{pipeline().parameters.adf_run_id} and table_id = @{item().table_id}",
+								"type": "Expression"
+							}
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
 				}
 			}
 		],
