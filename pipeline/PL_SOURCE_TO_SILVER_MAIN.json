@@ -96,7 +96,7 @@
 							}
 						},
 						{
-							"name": "ingest from source to silver inner",
+							"name": "ingest_from_source_to_silver_inner",
 							"type": "ExecutePipeline",
 							"dependsOn": [
 								{
@@ -131,6 +131,8 @@
 						{
 							"name": "Insert Inprogress",
 							"type": "Script",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
@@ -162,7 +164,7 @@
 							"type": "Script",
 							"dependsOn": [
 								{
-									"activity": "ingest from source to silver inner",
+									"activity": "ingest_from_source_to_silver_inner",
 									"dependencyConditions": [
 										"Failed"
 									]
