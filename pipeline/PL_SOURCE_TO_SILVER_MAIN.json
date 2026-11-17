@@ -53,8 +53,6 @@
 						{
 							"name": "Set variable1",
 							"type": "SetVariable",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"secureOutput": false,
@@ -72,8 +70,6 @@
 						{
 							"name": "Set variable12",
 							"type": "SetVariable",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Set variable1",
@@ -98,6 +94,8 @@
 						{
 							"name": "ingest from source to silver inner",
 							"type": "ExecutePipeline",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Failed",
 							"dependsOn": [
 								{
 									"activity": "Insert Inprogress",
@@ -131,6 +129,8 @@
 						{
 							"name": "Insert Inprogress",
 							"type": "Script",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
@@ -160,6 +160,8 @@
 						{
 							"name": "Insert Inprogress_copy1",
 							"type": "Script",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "ingest from source to silver inner",
