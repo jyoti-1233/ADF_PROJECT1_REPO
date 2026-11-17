@@ -98,8 +98,6 @@
 						{
 							"name": "Insert Inprogress",
 							"type": "Script",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
@@ -118,7 +116,7 @@
 									{
 										"type": "Query",
 										"text": {
-											"value": "@insert into  [ctrl].[audit_log] (adf_run_id\t,table_id,stage,status\t,start_time)\nvalues('@{pipeline().parameters.adf_run_id}',@{item().table_id},'source_to_silver','IN_PROGRESS',sysutcdatetime())",
+											"value": "insert into  [ctrl].[audit_log] (adf_run_id\t,table_id,stage,status\t,start_time)\nvalues('@{pipeline().parameters.adf_run_id}',@{item().table_id},'source_to_silver','IN_PROGRESS',sysutcdatetime())",
 											"type": "Expression"
 										}
 									}
@@ -129,11 +127,9 @@
 						{
 							"name": "Insert Inprogress_copy1",
 							"type": "Script",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
-									"activity": "Insert Inprogress",
+									"activity": "Execute Pipeline1",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -167,7 +163,14 @@
 						{
 							"name": "Execute Pipeline1",
 							"type": "ExecutePipeline",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Insert Inprogress",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"secureInput": false
 							},
