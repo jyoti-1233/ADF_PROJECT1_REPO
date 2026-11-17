@@ -125,7 +125,7 @@
 							}
 						},
 						{
-							"name": "Insert Inprogress_copy1",
+							"name": "Insert FAILED",
 							"type": "Script",
 							"dependsOn": [
 								{
