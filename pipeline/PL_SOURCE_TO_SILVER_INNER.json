@@ -200,7 +200,7 @@
 				}
 			},
 			{
-				"name": "Insert Inprogress_copy1",
+				"name": "Insert_SUCCESS",
 				"type": "Script",
 				"dependsOn": [
 					{
