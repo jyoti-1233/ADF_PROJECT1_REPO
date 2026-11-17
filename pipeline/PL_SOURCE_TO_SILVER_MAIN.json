@@ -127,14 +127,7 @@
 						{
 							"name": "Insert Inprogress_copy1",
 							"type": "Script",
-							"dependsOn": [
-								{
-									"activity": "Execute Pipeline1",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
+							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 2,
@@ -158,39 +151,6 @@
 									}
 								],
 								"scriptBlockExecutionTimeout": "02:00:00"
-							}
-						},
-						{
-							"name": "Execute Pipeline1",
-							"type": "ExecutePipeline",
-							"dependsOn": [
-								{
-									"activity": "Insert Inprogress",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"pipeline": {
-									"referenceName": "PL_SOURCE_TO_SILVER_INNER",
-									"type": "PipelineReference"
-								},
-								"waitOnCompletion": false,
-								"parameters": {
-									"table_id": {
-										"value": "@item().table_id",
-										"type": "Expression"
-									},
-									"adf_run_id_inner": {
-										"value": "'a'",
-										"type": "Expression"
-									}
-								}
 							}
 						}
 					]
