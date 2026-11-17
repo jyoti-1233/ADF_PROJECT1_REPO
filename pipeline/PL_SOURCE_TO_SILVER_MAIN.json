@@ -116,7 +116,7 @@
 									{
 										"type": "Query",
 										"text": {
-											"value": "insert into  [ctrl].[audit_log] (adf_run_id\t,table_id,stage,status\t,start_time)\nvalues('@{pipeline().parameters.adf_run_id}',@{item().table_id},'source_to_silver','IN_PROGRESS',sysutcdatetime())",
+											"value": "insert into  [ctrl].[audit_log] (adf_run_id\t,table_id,stage,status\t,start_time)\nvalues(@{pipeline().parameters.adf_run_id},@{item().table_id},'source_to_silver','IN_PROGRESS',sysutcdatetime())",
 											"type": "Expression"
 										}
 									}
