@@ -131,8 +131,6 @@
 						{
 							"name": "Insert Inprogress",
 							"type": "Script",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
@@ -166,7 +164,7 @@
 								{
 									"activity": "ingest_from_source_to_silver_inner",
 									"dependencyConditions": [
-										"Failed"
+										"Skipped"
 									]
 								}
 							],
