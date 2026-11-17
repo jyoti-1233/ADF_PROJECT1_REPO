@@ -241,7 +241,7 @@
 				"type": "string",
 				"defaultValue": "1"
 			},
-			"adf_run_id": {
+			"adf_run_id_inner": {
 				"type": "string"
 			}
 		},
