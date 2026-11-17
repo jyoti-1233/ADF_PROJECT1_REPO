@@ -96,39 +96,6 @@
 							}
 						},
 						{
-							"name": "ingest_from_source_to_silver_inner",
-							"type": "ExecutePipeline",
-							"dependsOn": [
-								{
-									"activity": "Insert Inprogress",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"pipeline": {
-									"referenceName": "PL_SOURCE_TO_SILVER_INNER",
-									"type": "PipelineReference"
-								},
-								"waitOnCompletion": true,
-								"parameters": {
-									"table_id": {
-										"value": "@item().table_id",
-										"type": "Expression"
-									},
-									"adf_run_id_inner": {
-										"value": "@pipeline().parameters.adf_run_id",
-										"type": "Expression"
-									}
-								}
-							}
-						},
-						{
 							"name": "Insert Inprogress",
 							"type": "Script",
 							"dependsOn": [],
@@ -162,9 +129,9 @@
 							"type": "Script",
 							"dependsOn": [
 								{
-									"activity": "ingest_from_source_to_silver_inner",
+									"activity": "Execute Pipeline1",
 									"dependencyConditions": [
-										"Skipped"
+										"Succeeded"
 									]
 								}
 							],
@@ -191,6 +158,39 @@
 									}
 								],
 								"scriptBlockExecutionTimeout": "02:00:00"
+							}
+						},
+						{
+							"name": "Execute Pipeline1",
+							"type": "ExecutePipeline",
+							"dependsOn": [
+								{
+									"activity": "Insert Inprogress",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "PL_SOURCE_TO_SILVER_INNER",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"table_id": {
+										"value": "@item().table_id",
+										"type": "Expression"
+									},
+									"adf_run_id_inner": {
+										"value": "@pipeline().parameters.adf_run_id",
+										"type": "Expression"
+									}
+								}
 							}
 						}
 					]
