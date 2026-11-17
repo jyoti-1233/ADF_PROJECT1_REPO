@@ -1,0 +1,23 @@
+{
+	"name": "ls_AzureSqlDatabaseproj1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "project1serverjyoti.database.windows.net",
+			"database": "project1dbjyoti",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "jyotiadminproj1",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "db-passowrd"
+			}
+		}
+	}
+}
