@@ -182,8 +182,14 @@
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"table_id": "1",
-									"adf_run_id_inner": "'a'"
+									"table_id": {
+										"value": "@item().table_id",
+										"type": "Expression"
+									},
+									"adf_run_id_inner": {
+										"value": "@pipeline().parameters.adf_run_id",
+										"type": "Expression"
+									}
 								}
 							}
 						}
