@@ -11,10 +11,10 @@
 			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
-					"referenceName": "projectAzureKeyVault1",
+					"referenceName": "ls_AzureKeyVault1",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "postgres-passwordproject1"
+				"secretName": "postgres-password"
 			},
 			"sslMode": 2,
 			"authenticationType": "Basic"
