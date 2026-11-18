@@ -111,6 +111,9 @@
 		"variables": {
 			"Set _Start_Time": {
 				"type": "String"
+			},
+			"watermark_value": {
+				"type": "String"
 			}
 		},
 		"annotations": []
