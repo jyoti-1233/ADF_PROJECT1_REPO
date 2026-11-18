@@ -34,8 +34,6 @@
 			{
 				"name": "injgest all table",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "read_souce_table_list",
