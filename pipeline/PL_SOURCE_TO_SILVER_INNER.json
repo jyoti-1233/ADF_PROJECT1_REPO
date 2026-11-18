@@ -118,8 +118,6 @@
 			{
 				"name": "Landing_to_bronze",
 				"type": "DatabricksNotebook",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Copy _source_to_landing",
@@ -161,8 +159,6 @@
 			{
 				"name": "bronze_to_silver",
 				"type": "DatabricksNotebook",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Landing_to_bronze",
@@ -188,6 +184,14 @@
 						},
 						"table_name": {
 							"value": "@activity('Read_table_details').output.firstRow.silver_table_name",
+							"type": "Expression"
+						},
+						"merge_keys": {
+							"value": "@coalesce(\r\nactivity('Read_table_details').output.firstRow.merge_keys,'')",
+							"type": "Expression"
+						},
+						"load_type": {
+							"value": "@activity('Read_table_details').output.firstRow.load_type",
 							"type": "Expression"
 						}
 					}
