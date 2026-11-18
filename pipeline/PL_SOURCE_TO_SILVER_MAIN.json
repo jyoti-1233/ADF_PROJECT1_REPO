@@ -98,6 +98,8 @@
 						{
 							"name": "Insert Inprogress",
 							"type": "Script",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
@@ -127,6 +129,8 @@
 						{
 							"name": "Insert FAILED",
 							"type": "Script",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Execute Pipeline1",
