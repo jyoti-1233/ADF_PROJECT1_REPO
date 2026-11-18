@@ -204,8 +204,6 @@
 			{
 				"name": "Insert_SUCCESS",
 				"type": "Script",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "bronze_to_silver",
