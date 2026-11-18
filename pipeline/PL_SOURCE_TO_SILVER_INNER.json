@@ -118,6 +118,8 @@
 			{
 				"name": "Landing_to_bronze",
 				"type": "DatabricksNotebook",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Copy _source_to_landing",
@@ -159,6 +161,8 @@
 			{
 				"name": "bronze_to_silver",
 				"type": "DatabricksNotebook",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Landing_to_bronze",
@@ -196,6 +200,8 @@
 			{
 				"name": "Insert_SUCCESS",
 				"type": "Script",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "bronze_to_silver",
