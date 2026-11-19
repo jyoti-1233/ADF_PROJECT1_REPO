@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "project1-adfdemo"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://project1storagejyoti.dfs.core.windows.net/"
+		},
+		"LS_AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "1117-063502-o9kvu93v"
+		},
+		"LS_PostgreSqlPROJ1_properties_typeProperties_server": {
+			"value": "ep-winter-mountain-b3m6h5tb-pooler.c-4.ap-southeast-1.aws.neon.tech"
+		},
+		"LS_PostgreSqlPROJ1_properties_typeProperties_database": {
+			"value": "neondb"
+		},
+		"LS_PostgreSqlPROJ1_properties_typeProperties_username": {
+			"value": "neondb_owner"
+		},
+		"ls_AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://key-vault-proj1.vault.azure.net/"
+		},
+		"ls_AzureSqlDatabaseproj1_properties_typeProperties_server": {
+			"value": "project1serverjyoti.database.windows.net"
+		},
+		"ls_AzureSqlDatabaseproj1_properties_typeProperties_database": {
+			"value": "project1dbjyoti"
+		},
+		"ls_AzureSqlDatabaseproj1_properties_typeProperties_userName": {
+			"value": "jyotiadminproj1"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
