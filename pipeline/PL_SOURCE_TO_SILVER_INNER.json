@@ -81,6 +81,10 @@
 						"table_name": {
 							"value": "@activity('Read_table_details').output.firstRow.source_table_name",
 							"type": "Expression"
+						},
+						"source_file_format": {
+							"value": "@activity('Read_table_details').output.firstRow.source_file_format",
+							"type": "Expression"
 						}
 					}
 				},
