@@ -447,7 +447,7 @@
 													"value": "@concat(\nactivity('Read_table_details').output.firstRow.source_system,\n'/',\nactivity('Read_table_details').output.firstRow.source_table_name,\n'/',\nvariables('Set _Start_Time') \n)",
 													"type": "Expression"
 												},
-												"container": "Landing"
+												"container": "landing"
 											}
 										}
 									]
