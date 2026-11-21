@@ -292,7 +292,7 @@
 									{
 										"type": "Query",
 										"text": {
-											"value": "update ctrl.watermark\nset watermark_value =  sysutcdatetime()\nWHERE  table_id = @{pipeline().parameters.table_id}",
+											"value": "update ctrl.watermark\nset watermark_value =  variables('Set _Start_Time')\n,updated_timestamp = sysutcdatetime()\nWHERE  table_id = @{pipeline().parameters.table_id}",
 											"type": "Expression"
 										}
 									}
